@@ -52,7 +52,13 @@ export class Jobs extends React.Component {
     }
 
     handleSubmit(event) {
-        location.replace('/jobForm')
+        // location.replace('/jobForm')
+        location.replace('/loginorregister');
+
+        // TODO:
+        // Add email and password to login, add new table users and count 0-3 (for payment)
+        // link the tables somehow
+
     }
 
     handleClick(event) {
@@ -65,10 +71,6 @@ export class Jobs extends React.Component {
     hideModal() {
         this.setState({show: false});
     }
-
-    // <h3>{data.restname}
-    //     <span className="busca"> busca </span>
-    //     {data.jobtype}</h3>
 
     render() {
         if (!this.state.jobData) {
@@ -109,7 +111,7 @@ export class Jobs extends React.Component {
                             </select>
                         </form>
                     </div>
-                    <Link to="/jobForm"><input id="createJob" type="submit" value="Publicar Anuncio"/></Link>
+                    <Link to="/loginorregister"><input id="createJob" type="submit" value="Publicar Anuncio"/></Link>
                 </div>
 
                 <div className="allJobs">

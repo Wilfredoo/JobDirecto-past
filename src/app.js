@@ -3,6 +3,9 @@ import axios from 'axios';
 import {JobConfirm} from './jobConfirm.js';
 import {JobForm} from './jobForm.js';
 import {Jobs} from './jobs.js';
+import LoginOrRegister from './loginorregister.js';
+import Login from './login.js';
+import Register from './register.js';
 import {BrowserRouter, Route} from 'react-router-dom'
 import ReactGA from 'react-ga';
 
@@ -19,10 +22,13 @@ export class App extends React.Component {
         return (
             <BrowserRouter>
                 <div>
-                    <Route exact="exact" path="/jobform" component={JobForm}/>
-                    <Route exact="exact" path="/" component={Jobs}/>
-                    <Route exact="exact" path="/jobConfirm" component={JobConfirm}/>
+                    <Route path="/jobform" component={JobForm}/>
+                    <Route path="/loginorregister" component={LoginOrRegister}/>
+                    <Route path="/register" component={Register}/>
+                    <Route path="/login" component={Login}/>
+                    <Route path="/jobConfirm" component={JobConfirm}/>
                     <Route path = "/job/:id" render = {props => (<JobDetails {...props} key = {props.match.url} /> )} />
+                    <Route exact="exact" path="/" component={Jobs}/>
                 </div>
             </BrowserRouter>
         )

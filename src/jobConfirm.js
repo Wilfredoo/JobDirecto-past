@@ -27,7 +27,6 @@ export class JobConfirm extends React.Component {
                     jobData: result.data
                 })
             }
-            console.log(result.data);
         });
     }
 

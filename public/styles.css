@@ -165,3 +165,44 @@ td {
 label {
     font-size: 30px;
 }
+
+/* Login & Registration Page */
+
+.login-container {
+    text-align: center;
+}
+
+.login-centering {
+    display: inline-block;
+}
+
+.underline-link {
+    color: #365899;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.ta {
+    color: #777;
+    font-size: 11px;
+    width: 316px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.error {
+    color: red;
+    font-size: 24px;
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

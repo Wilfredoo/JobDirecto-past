@@ -16,6 +16,8 @@ export class JobForm extends React.Component {
     }
 
     componentDidMount() {
+        axios.get('/jobform');
+
         axios.get("/getJobforCorrect").then(result => {
             this.setState({
                 jobData: result.data,

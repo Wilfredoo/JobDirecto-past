@@ -18,11 +18,10 @@ if (process.env.NODE_ENV != 'production') {
     app.use('/bundle.js', (req, res) => res.sendFile(`${__dirname}/bundle.js`));
 }
 
+app.use(require('body-parser').json());
 app.use(require('body-parser').urlencoded({
     extended: false
 }));
-
-app.use(require('body-parser').json())
 
 app.use(cookieSession({
     secret: `I'm always angry.`,
@@ -66,6 +65,23 @@ app.get("/getJobs", function(req, res) {
     });
 });
 
+app.get('/loginorregister', async function(req, res) {
+    if(req.session.userId) {
+        res.redirect('/jobform');
+    } else {
+        return;
+    }
+})
+
+app.get('/jobform', async function(req, res) {
+    if(!req.session.userId) {
+        res.redirect('/loginorregister');
+    } else if (req.session.userId === undefined) {
+        res.redirect('/loginorregister');
+    } else {
+        res.sendFile(__dirname + '/index.html');
+    }
+})
 
 app.post('/finalizeJob', (req, res) => {
     req.session.job = req.body
@@ -74,10 +90,9 @@ app.post('/finalizeJob', (req, res) => {
     });
 })
 
-
 app.post('/publishJob', (req, res) => {
     return database.publishJob(req.body.jobData.data.restname, req.body.jobData.data.jobtype, req.body.jobData.data.hourpay, req.body.jobData.data.typepay,
-        req.body.jobData.data.schedule, req.body.jobData.data.contact, req.body.jobData.data.address, req.body.jobData.data.area, req.body.jobData.data.phone, req.body.jobData.data.extrainfo, req.body.jobData.data.otro_desc).then(() => {
+        req.body.jobData.data.schedule, req.body.jobData.data.contact, req.body.jobData.data.address, req.body.jobData.data.area, req.body.jobData.data.phone, req.body.jobData.data.extrainfo, req.body.jobData.data.otro_desc, req.session.userId).then(() => {
         // req.session.jobId = results[0].id;
         req.session = null;
             res.json({
@@ -85,6 +100,46 @@ app.post('/publishJob', (req, res) => {
             });
         })
 })
+
+app.post('/register', function(req, res) {
+    database.hashPassword(req.body.password)
+        .then(hash => {
+            return database.registerUser(req.body.email, hash)
+                .then(results => {
+                    req.session.userId = results[0].id;
+                    res.json({success:true});
+                })
+                .catch(err => {
+                    console.log(err);
+                    res.json({success:false});
+                });
+        })
+        .catch(err => {
+            console.log(err);
+        });
+});
+
+app.post('/login', (req, res) => {
+    database.showHashPw(req.body.email)
+        .then(userPw => {
+            if (!userPw) {
+                res.json({success:false});
+            } else {
+                return database.checkPassword(req.body.password, userPw);
+            }
+        })
+        .then(doesMatch => {
+            if(doesMatch) {
+                database.getLoginId(req.body.email).then(id => {
+                    req.session.userId = id;
+                    res.json({success:true});
+                });
+            } else {
+                res.json({success:false});
+            }
+        })
+        .catch(err => {console.log(err);});
+});
 
 
 app.get('*', function(req, res) {
