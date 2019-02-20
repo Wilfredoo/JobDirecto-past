@@ -111,7 +111,11 @@ export class Jobs extends React.Component {
                             </select>
                         </form>
                     </div>
+<<<<<<< HEAD
                     <Link to="/loginorregister"><input id="createJob" type="submit" value="Publicar Anuncio"/></Link>
+=======
+                    <Link to="/jobForm"><input id="createJob" type="submit" value="Busco personal"/></Link>
+>>>>>>> 0d6e8542ca2ff62b6e7019c094cd6b8467d290ec
                 </div>
 
                 <div className="allJobs">
