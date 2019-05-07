@@ -106,12 +106,13 @@ export class Jobs extends React.Component {
                     className="jobData"
                     key={data.id}
                   >
-                    <h3>
-                      <span className="busca"> Se busca </span>
-                      {data.jobtype}
-                    </h3>
+                    <p>
+                      <span className="restName">{data.restname}</span>
+                      <span className="busca"> busca </span>
+                      <span className="jobType">{data.jobtype}</span>
+                    </p>
 
-                    <p>Area: {data.area}</p>
+                    <p>{data.area}</p>
                     <div className="jobMoment">
                       <Moment fromNow>{data.created_at}</Moment>
                     </div>
@@ -128,11 +129,12 @@ export class Jobs extends React.Component {
                   className="jobData"
                   key={data.id}
                 >
-                  <h3>
-                    <span className="busca">Se busca </span>
-                    {data.jobtype}
-                  </h3>
-                  <p>Area: {data.area}</p>
+                  <p>
+                    <span className="restName">{data.restname}</span>
+                    <span className="busca"> busca </span>
+                    <span className="jobType">{data.jobtype}</span>
+                  </p>
+                  <p>{data.area}</p>
                   <div className="jobMoment">
                     <Moment fromNow>{data.created_at}</Moment>
                   </div>

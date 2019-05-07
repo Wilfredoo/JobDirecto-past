@@ -57,12 +57,6 @@ a:visited {
   font-weight: bold;
 }
 
-.busca {
-  color: black;
-  font-size: 40px;
-  font-style: italic;
-}
-
 /* job details page */
 #jobDetails {
   margin: 10px;
@@ -227,4 +221,19 @@ label {
 #title {
   font-size: 50px;
   text-align: center;
+}
+
+.restName {
+  color: black;
+}
+
+.busca {
+  color: black;
+  font-style: italic;
+}
+
+.jobType {
+  font-size: 45px;
+  color: black;
+  font-weight: 900;
 }
