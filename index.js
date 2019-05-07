@@ -92,7 +92,7 @@ app.post('/finalizeJob', (req, res) => {
 
 app.post('/publishJob', (req, res) => {
     return database.publishJob(req.body.jobData.data.restname, req.body.jobData.data.jobtype, req.body.jobData.data.hourpay, req.body.jobData.data.typepay,
-        req.body.jobData.data.schedule, req.body.jobData.data.contact, req.body.jobData.data.address, req.body.jobData.data.area, req.body.jobData.data.phone, req.body.jobData.data.extrainfo, req.body.jobData.data.otro_desc, req.session.userId).then(() => {
+        req.body.jobData.data.schedule, req.body.jobData.data.contact, req.body.jobData.data.address, req.body.jobData.data.area, req.body.jobData.data.phone, req.body.jobData.data.extrainfo,  req.session.userId).then(() => {
         // req.session.jobId = results[0].id;
         req.session = null;
             res.json({

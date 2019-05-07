@@ -1,208 +1,220 @@
 /* jobs page */
 .allJobs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .jobData {
-    width: 400px;
-    background-color: #ffff29;
-    border-style: solid;
-    margin: 10px;
-    font-size: 40px;
-    padding: 20px;
+  width: 400px;
+  background-color: #ffff29;
+  border-style: solid;
+  margin: 10px;
+  font-size: 40px;
+  padding: 20px;
 }
 
-a:link, a:visited {
-    color: black;
-    text-decoration: none;
+a:link,
+a:visited {
+  color: black;
+  text-decoration: none;
 }
 
 .filtersbutton {
-    display: inline-block;
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 30px;
-    margin-top: 80px;
+  display: inline-block;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 30px;
+  margin-top: 80px;
 }
 
 .filters {
-    /* margin: 50px; */
-    display: flex;
+  /* margin: 50px; */
+  display: flex;
 }
 
 .filter {
-    height: 50px;
-    width: 200px;
-    font-size: 30px;
-    margin: 12px;
+  height: 50px;
+  width: 200px;
+  font-size: 30px;
+  margin: 12px;
 }
 
 #createJob {
-    height: 100%;
-    width: 300px;
-    font-size: 30px;
-    margin-left: 120px;
+  height: 100%;
+  width: 300px;
+  font-size: 30px;
+  margin-left: 120px;
 }
 
 .busca {
-    color: black;
-    font-size: 40px;
-    font-style: italic;
+  color: black;
+  font-size: 40px;
+  font-style: italic;
 }
 
 /* job details page */
 .jobDetails {
-    background-color: #ADFF2F;
-    margin: 50px;
-    padding: 20px;
-    margin-top: 200px;
+  background-color: #adff2f;
+  margin: 50px;
+  padding: 20px;
+  margin-top: 200px;
 }
 
 .jobDetails p {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 .btn {
-    background-color: DodgerBlue;
-    border: none;
-    color: white;
-    margin-right: 20px;
-    font-size: 76px;
-    cursor: pointer;
-    right: 0;
-    top: 0;
-    position: absolute;
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  margin-right: 20px;
+  font-size: 76px;
+  cursor: pointer;
+  right: 0;
+  top: 0;
+  position: absolute;
 }
 
 /* job form */
 .formQuestions {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 .formInputs {
-    font-size: 50px;
-    width: 60%;
-    height: 60%;
-    margin-bottom: 35px;
-    border-style: solid;
-    border-width: medium;
+  font-size: 50px;
+  width: 60%;
+  height: 60%;
+  margin-bottom: 35px;
+  border-style: solid;
+  border-width: medium;
 }
 
 .jobForm {
-    margin: 40px;
-    padding: 20px;
+  margin: 40px;
+  padding: 20px;
 }
 
 .radio {
-    width: 3em;
-    height: 3em;
-    margin-right: 25px;
-    margin-bottom: 30px;
+  width: 3em;
+  height: 3em;
+  margin-right: 25px;
+  margin-bottom: 30px;
 }
 
 #listo {
-    width: 50%;
-    height: 100px;
-    font-size: 50px;
+  width: 50%;
+  height: 100px;
+  font-size: 50px;
 }
 
 /* confirm page */
 .jobConfirmPage {
-    margin: 40px;
-    padding: 20px;
+  margin: 40px;
+  padding: 20px;
 }
 
 .confirmButton {
-    width: 300px;
-    height: 100px;
-    font-size: 50px;
-    margin: 30px;
+  width: 300px;
+  height: 100px;
+  font-size: 50px;
+  margin: 30px;
 }
 
 .confirmButtons {
-    display: flex;
-    justify-content: center;
-    margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
 }
 
 .confirmText {
-    font-size: 45px;
-    margin-top: 50px;
+  font-size: 45px;
+  margin-top: 50px;
 }
 
 td {
-    padding: 15px;
+  padding: 15px;
 }
 
 .confirmTitle {
-    margin-bottom: 100px;
-    font-size: 45px;
+  margin-bottom: 100px;
+  font-size: 45px;
 }
 
 .modal {
-    transform: translate(-50%, -50%);
-    position: fixed;
-    background: DodgerBlue;
-    border-style: solid;
-    width: 80%;
-    height: 80%;
-    top: 50%;
-    left: 50%;
-    color: #ffffff;
-    display: flex;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  background: DodgerBlue;
+  border-style: solid;
+  width: 80%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  color: #ffffff;
+  display: flex;
 }
 
 .jobMoment {
-    font-size: 30px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    font-style: oblique;
+  font-size: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-style: oblique;
 }
 
 label {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 /* Login & Registration Page */
 
 .login-container {
-    text-align: center;
+  text-align: center;
 }
 
 .login-centering {
-    display: inline-block;
+  display: inline-block;
 }
 
 .underline-link {
-    color: #365899;
-    cursor: pointer;
-    font-weight: normal;
-    font-size: 12px;
-    text-align: center;
-    padding-top: 6px;
-    padding-bottom: 6px;
+  color: #365899;
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 12px;
+  text-align: center;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .ta {
-    color: #777;
-    font-size: 11px;
-    width: 316px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+  color: #777;
+  font-size: 11px;
+  width: 316px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .error {
-    color: red;
-    font-size: 24px;
-    animation: blinker 1s linear infinite;
+  color: red;
+  font-size: 24px;
+  animation: blinker 1s linear infinite;
 }
 
 @keyframes blinker {
   50% {
     opacity: 0;
   }
+}
+
+.LoginOrRegister {
+  width: 330px;
+  height: 130px;
+  font-size: 40px;
+}
+
+#title {
+  font-size: 50px;
+  text-align: center;
 }

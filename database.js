@@ -12,14 +12,14 @@ const db = spicedPg(dbUrl);
 var bcrypt = require('bcryptjs');
 
 
-exports.publishJob = function(restname, jobtype, hourpay, typepay, schedule, contact, address, area, phone, extrainfo, otro_desc, user_id) {
+exports.publishJob = function(restname, jobtype, hourpay, typepay, schedule, contact, address, area, phone, extrainfo) {
     return db.query(`
         INSERT INTO jobs
-        (restname, jobtype, hourpay, typepay, schedule, contact, address, area, phone, extrainfo, otro_desc, user_id)
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
+        (restname, jobtype, hourpay, typepay, schedule, contact, address, area, phone, extrainfo)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
         returning *;
         `,
-            [restname, jobtype, hourpay, typepay, schedule, contact, address, area, phone, extrainfo, otro_desc, user_id]
+            [restname, jobtype, hourpay, typepay, schedule, contact, address, area, phone, extrainfo]
         )
         .then(function(results) {
             return results.rows;

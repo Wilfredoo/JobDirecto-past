@@ -29,10 +29,11 @@ export default class LoginOrRegister extends React.Component {
     render() {
         return(
             <div className="login-container">
-                <h1>Login / Register</h1>
+                <h1>Crear cuenta</h1>
                     <div>
-                        <input id="login" onClick={this.login} type="submit" value="Login"/>
-                        <input id="register" onClick={this.register} type="submit" value="Register"/>
+                    <p>Para poder publicar un anuncio, debe crear una cuenta. <br /> Si ya creo una cuenta,</p>
+                        <input className="LoginOrRegister" id="login" onClick={this.login} type="submit" value="Entrar a mi cuenta"/>
+                        <input className="LoginOrRegister" id="register" onClick={this.register} type="submit" value="Crear nuevo usuario"/>
                     </div>
             </div>
         )

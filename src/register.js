@@ -37,12 +37,14 @@ export default class Register extends React.Component {
                 <h1>Register</h1>
                 {
                     this.state.error &&
-                    <div className="error">Email or password is incorrect or already registered.</div>
+                    <div className="error">Este usuario ya esta registrado!</div>
                 }
                 <form onSubmit={this.handleSubmit}>
+                <input autoFocus className="formInputs" type="text" name="email" placeholder="Email" required="required" onChange={this.handleChange}/>
+
                     <input autoFocus className="formInputs" type="email" name="email" placeholder="Email" required="required" onChange={this.handleChange}/>
-                    <input className="formInputs" type="password" name="password" placeholder="Password" required="required" onChange={this.handleChange}/>
-                    <p className="ta">By clicking Sign Up, you agree to our <span className="fakelink">Terms</span>. Learn how we collect, use and share your data in our <span className="underline-link">Data Policy</span> and how we use cookies and similar technology in our <span className="underline-link">Cookies Policy</span>.</p>
+                    <input className="formInputs" type="password" name="password" placeholder="Contrasena" required="required" onChange={this.handleChange}/>
+                    // <p className="ta">By clicking Sign Up, you agree to our <span className="fakelink">Terms</span>. Learn how we collect, use and share your data in our <span className="underline-link">Data Policy</span> and how we use cookies and similar technology in our <span className="underline-link">Cookies Policy</span>.</p>
                     <br/>
                     <button className="submitbutton">Sign Up</button>
                 </form>

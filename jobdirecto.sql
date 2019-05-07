@@ -11,6 +11,7 @@ CREATE TABLE jobs(
     address VARCHAR(255),
     phone VARCHAR(255),
     area VARCHAR(255),
+    extrainfo VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
