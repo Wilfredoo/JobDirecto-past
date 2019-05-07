@@ -59,48 +59,48 @@ export class JobConfirm extends React.Component {
                     <h1 className="confirmTitle">Confirme la informacion es correcta:</h1>
                     <table>
                         <tr>
-                           <td className="confirmText">Restaurante:</td>
-                           <td className="confirmText">{this.state.jobData.data.restname}</td>
+                           <td className="jobDetailsText">Restaurante:</td>
+                           <td className="jobDetailsText">{this.state.jobData.data.restname}</td>
                          </tr>
                         { this.state.jobData.data.jobtype !== "Otro" &&
                          <tr>
-                           <td className="confirmText">Puesto:</td>
-                           <td className="confirmText">{this.state.jobData.data.jobtype}</td>
+                           <td className="jobDetailsText">Puesto:</td>
+                           <td className="jobDetailsText">{this.state.jobData.data.jobtype}</td>
                          </tr>
                         }
                         { this.state.jobData.data.jobtype === "Otro" &&
                          <tr>
-                           <td className="confirmText">Puesto:</td>
-                           <td className="confirmText">{this.state.jobData.data.otro_desc}</td>
+                           <td className="jobDetailsText">Puesto:</td>
+                           <td className="jobDetailsText">{this.state.jobData.data.otro_desc}</td>
                          </tr>
                         }
                          <tr>
-                           <td className="confirmText">Salario:</td>
-                           <td className="confirmText">{this.state.jobData.data.hourpay}</td>
+                           <td className="jobDetailsText">Salario:</td>
+                           <td className="jobDetailsText">{this.state.jobData.data.hourpay}</td>
                          </tr>
                          <tr>
-                           <td className="confirmText">Paga en:</td>
-                           <td className="confirmText">{this.state.jobData.data.typepay}</td>
+                           <td className="jobDetailsText">Paga en:</td>
+                           <td className="jobDetailsText">{this.state.jobData.data.typepay}</td>
                          </tr>
                          <tr>
-                           <td className="confirmText">Horario:</td>
-                           <td className="confirmText">{this.state.jobData.data.schedule}</td>
+                           <td className="jobDetailsText">Horario:</td>
+                           <td className="jobDetailsText">{this.state.jobData.data.schedule}</td>
                          </tr>
                          <tr>
-                           <td className="confirmText">Direccion:</td>
-                           <td className="confirmText">{this.state.jobData.data.address}</td>
+                           <td className="jobDetailsText">Direccion:</td>
+                           <td className="jobDetailsText">{this.state.jobData.data.address}</td>
                          </tr>
                          <tr>
-                           <td className="confirmText">Numero:</td>
-                           <td className="confirmText">{this.state.jobData.data.phone}</td>
+                           <td className="jobDetailsText">Numero:</td>
+                           <td className="jobDetailsText">{this.state.jobData.data.phone}</td>
                          </tr>
                          <tr>
-                           <td className="confirmText">Preguntar por:</td>
-                           <td className="confirmText">{this.state.jobData.data.contact}</td>
+                           <td className="jobDetailsText">Preguntar por:</td>
+                           <td className="jobDetailsText">{this.state.jobData.data.contact}</td>
                          </tr>
                          <tr>
-                           <td className="confirmText">Mas informacion:</td>
-                           <td className="confirmText">{this.state.jobData.data.extrainfo}</td>
+                           <td className="jobDetailsText">Mas informacion:</td>
+                           <td className="jobDetailsText">{this.state.jobData.data.extrainfo}</td>
                          </tr>
                     </table>
                     <div className="confirmButtons">
