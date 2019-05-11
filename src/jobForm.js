@@ -32,6 +32,11 @@ export class JobForm extends React.Component {
     });
   }
 
+  makeUrgent() {
+    console.log("this is being checked");
+    // addClass backgroundColor yellow to .jobForm
+  }
+
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value
@@ -53,7 +58,6 @@ export class JobForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <h1>Crear Nuevo Puesto</h1>
           <p className="formQuestions">Como se llama su deli o restaurante?</p>
-
           <input
             className="formInputs"
             type="text"
@@ -66,7 +70,6 @@ export class JobForm extends React.Component {
             required="required"
             onChange={this.handleChange}
           />
-
           <p className="formQuestions">Que posicion busca?</p>
           <input
             className="formInputs"
@@ -80,7 +83,6 @@ export class JobForm extends React.Component {
             required="required"
             onChange={this.handleChange}
           />
-
           {this.state.jobtype === "Otro" && (
             <div>
               <p className="formQuestions" style={{ color: "blue" }}>
@@ -96,7 +98,6 @@ export class JobForm extends React.Component {
               />
             </div>
           )}
-
           <p className="formQuestions">Cuanto paga?</p>
           <input
             className="formInputs"
@@ -109,7 +110,6 @@ export class JobForm extends React.Component {
             }
             onChange={this.handleChange}
           />
-
           <p className="formQuestions">Paga en cheque o cash?</p>
           {this.state.jobData &&
             this.state.jobData.data &&
@@ -148,7 +148,6 @@ export class JobForm extends React.Component {
                 </span>
               </label>
             )}
-
           {(this.state.jobData &&
             this.state.jobData.data &&
             this.state.jobData.data.typepay !== "cash") ||
@@ -166,7 +165,6 @@ export class JobForm extends React.Component {
                 </span>
               </label>
             ))}
-
           {this.state.jobData &&
             this.state.jobData.data &&
             this.state.jobData.data.typepay === "cheque" && (
@@ -204,7 +202,6 @@ export class JobForm extends React.Component {
                 </span>
               </label>
             )}
-
           {(this.state.jobData &&
             this.state.jobData.data &&
             this.state.jobData.data.typepay !== "cheque") ||
@@ -222,7 +219,6 @@ export class JobForm extends React.Component {
                 </span>
               </label>
             ))}
-
           {this.state.jobData &&
             this.state.jobData.data &&
             this.state.jobData.data.typepay === "Cash y Cheque" && (
@@ -260,7 +256,6 @@ export class JobForm extends React.Component {
                 </span>
               </label>
             )}
-
           {(this.state.jobData &&
             this.state.jobData.data &&
             this.state.jobData.data.typepay !== "Cash y Cheque") ||
@@ -278,7 +273,6 @@ export class JobForm extends React.Component {
                 </span>
               </label>
             ))}
-
           <p className="formQuestions"> Cual es el horario?</p>
           <input
             className="formInputs"
@@ -291,7 +285,6 @@ export class JobForm extends React.Component {
             }
             onChange={this.handleChange}
           />
-
           <p className="formQuestions">Direccion del local:</p>
           <input
             className="formInputs"
@@ -304,7 +297,6 @@ export class JobForm extends React.Component {
             }
             onChange={this.handleChange}
           />
-
           <p className="formQuestions">En que area se encuentra?</p>
           <select
             className="formInputs"
@@ -380,7 +372,6 @@ export class JobForm extends React.Component {
               Otra area en NY
             </option>
           </select>
-
           <p className="formQuestions">Numero de celular? (opcional)</p>
           <input
             className="formInputs"
@@ -393,7 +384,6 @@ export class JobForm extends React.Component {
             }
             onChange={this.handleChange}
           />
-
           <p className="formQuestions">Por quien preguntar?</p>
           <input
             className="formInputs"
@@ -406,7 +396,6 @@ export class JobForm extends React.Component {
             }
             onChange={this.handleChange}
           />
-
           <p className="formQuestions">Algo que desee agregar?</p>
           <input
             className="formInputs"
@@ -419,7 +408,12 @@ export class JobForm extends React.Component {
             }
             onChange={this.handleChange}
           />
-
+          <br />
+          <p className="formQuestions">Este anuncio es urgente</p>{" "}
+          <input class="switch" type="checkbox" onChange={this.makeUrgent} />
+          <br />
+          <br />
+          <br />
           <input
             id="listo"
             onClick={this.submission}

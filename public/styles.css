@@ -97,6 +97,7 @@ a:visited {
 .jobForm {
   margin: 40px;
   padding: 20px;
+  /* background-color: yellow; */
 }
 
 .radio {
@@ -236,4 +237,9 @@ label {
   font-size: 45px;
   color: black;
   font-weight: 900;
+}
+
+.switch {
+  height: 70px;
+  width: 70px;
 }
