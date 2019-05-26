@@ -11,14 +11,7 @@ export default class UrgentChecked2 extends React.Component {
   }
 
   handleSubmit(event) {
-    // if urgent is not checked, then do this
-    event.preventDefault();
-    axios.post("/finalizeJob", this.state).then(resp => {
-      this.props.history.push("/jobConfirm");
-      if (resp.data.success) {
-      }
-    });
-    // if urgent is checked, then redirecto to new component
+    this.props.history.push("/JobConfirm");
   }
 
   render() {

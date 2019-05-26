@@ -88,14 +88,12 @@ app.get("/jobform", async function(req, res) {
 });
 
 app.post("/finalizeJob", (req, res) => {
-  console.log("req session job1: ", req.session.job);
   console.log("req body1: ", req.body);
   req.session.job = req.body;
   res.json({
     success: true
   });
   console.log("req session job2: ", req.session.job);
-  console.log("req body2: ", req.body);
 });
 
 app.post("/publishJob", (req, res) => {
