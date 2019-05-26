@@ -48,8 +48,10 @@ export class JobForm extends React.Component {
     event.preventDefault();
     console.log("state in job form: ", this.state);
     axios.post("/finalizeJob", this.state).then(resp => {
-      this.props.history.push("/urgentChecked");
-      if (resp.data.success) {
+      if (this.state.urgent === "true") {
+        this.props.history.push("/urgentChecked");
+      } else {
+        this.props.history.push("/JobConfirm");
       }
     });
   }
