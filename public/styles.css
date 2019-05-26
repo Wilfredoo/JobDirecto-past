@@ -1,9 +1,30 @@
 /* jobs page */
 .allJobs {
+  margin-top: 130px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.urgentJobs {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 130px;
+}
+
+.urgentCheckBox {
+  width: 50px;
+  height: 50px;
+}
+
+.urgentJobData {
+  width: 400px;
+  background-color: yellow;
+  border-style: solid;
+  margin: 10px;
+  font-size: 40px;
+  padding: 20px;
 }
 
 .jobData {
@@ -13,6 +34,10 @@
   margin: 10px;
   font-size: 40px;
   padding: 20px;
+}
+
+.jobData.yellow {
+  background-color: yellow;
 }
 
 a:link,
@@ -97,7 +122,10 @@ a:visited {
 .jobForm {
   margin: 40px;
   padding: 20px;
-  /* background-color: yellow; */
+}
+
+.jobForm.yellow {
+  background-color: yellow;
 }
 
 .radio {
@@ -242,4 +270,23 @@ label {
 .switch {
   height: 70px;
   width: 70px;
+}
+
+#urgentCheckedContainer {
+  margin: 60px;
+}
+
+#UrgentCheckedTitle {
+  font-size: 30px;
+}
+
+.UrgentCheckedText {
+  font-size: 40px;
+}
+
+.UrgentCheckedButton {
+  width: 130px;
+  height: 130px;
+  font-size: 49px;
+  margin: 20px;
 }

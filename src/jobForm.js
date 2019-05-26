@@ -5,11 +5,10 @@ import axios from "axios";
 export class JobForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      value: ""
-    };
+    this.state = { addClass: false };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.makeUrgent = this.makeUrgent.bind(this);
   }
 
   componentDidMount() {
@@ -27,13 +26,15 @@ export class JobForm extends React.Component {
         address: result.data.data.address,
         phone: result.data.data.phone,
         contact: result.data.data.contact,
-        extrainfo: result.data.data.extrainfo
+        extrainfo: result.data.data.extrainfo,
+        urgent: result.data.data.urgent
       });
     });
   }
 
   makeUrgent() {
     console.log("this is being checked");
+    this.setState({ addClass: !this.state.addClass });
     // addClass backgroundColor yellow to .jobForm
   }
 
@@ -45,19 +46,26 @@ export class JobForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    console.log("state in job form: ", this.state);
     axios.post("/finalizeJob", this.state).then(resp => {
-      this.props.history.push("/jobConfirm");
+      this.props.history.push("/urgentChecked");
       if (resp.data.success) {
       }
     });
   }
 
   render() {
+    let jobFormClass = ["jobForm"];
+    if (this.state.addClass) {
+      jobFormClass.push("yellow");
+    }
     return (
-      <div className="jobForm">
+      <div className={jobFormClass.join(" ")} onClick={this.makeUrgent}>
         <form onSubmit={this.handleSubmit}>
           <h1>Crear Nuevo Puesto</h1>
-          <p className="formQuestions">Como se llama su deli o restaurante?</p>
+          <p className="formQuestions">
+            Como se llama su restaurante o empresa?
+          </p>
           <input
             className="formInputs"
             type="text"
@@ -409,8 +417,21 @@ export class JobForm extends React.Component {
             onChange={this.handleChange}
           />
           <br />
-          <p className="formQuestions">Este anuncio es urgente</p>{" "}
-          <input class="switch" type="checkbox" onChange={this.makeUrgent} />
+          <p className="formQuestions">
+            Desea que este anuncio sea amarillo?
+          </p>{" "}
+          <p>Si</p>
+          <input
+            className="urgentCheckBox"
+            type="checkbox"
+            name="urgent"
+            defaultValue={
+              this.state.jobData && this.state.jobData.data
+                ? this.state.jobData.data.urgent
+                : true
+            }
+            onChange={this.handleChange}
+          />
           <br />
           <br />
           <br />

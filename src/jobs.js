@@ -11,7 +11,6 @@ export class Jobs extends React.Component {
     this.state = {
       show: false
     };
-    this.handleChangeJob = this.handleChangeJob.bind(this);
     this.handleChangeArea = this.handleChangeArea.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -20,18 +19,17 @@ export class Jobs extends React.Component {
 
   componentDidMount() {
     axios.get("/getJobs").then(result => {
-      this.setState({ jobData: result.data });
+      this.setState({ jobData: result.data }, () => {
+        console.log("look at this beautiful state: ", this.state.jobData.data);
+      });
+    });
+
+    axios.get("/getUrgentJobs").then(result => {
+      this.setState({ urgentJobData: result.data }, () => {});
     });
 
     axios.get("/getDate").then(result => {
       this.setState({ dateData: result.data });
-    });
-  }
-
-  handleChangeJob(event) {
-    this.setState({
-      [event.target.name]: event.target.value,
-      userSelectionJob: event.target.value
     });
   }
 
@@ -43,12 +41,7 @@ export class Jobs extends React.Component {
   }
 
   handleSubmit(event) {
-    // location.replace('/jobForm')
     location.replace("/loginorregister");
-
-    // TODO:
-    // Add email and password to login, add new table users and count 0-3 (for payment)
-    // link the tables somehow
   }
 
   handleClick(event) {
@@ -63,7 +56,7 @@ export class Jobs extends React.Component {
   }
 
   render() {
-    if (!this.state.jobData) {
+    if (!this.state.jobData || !this.state.urgentJobData) {
       return null;
     }
     return (
@@ -97,9 +90,59 @@ export class Jobs extends React.Component {
         </div>
 
         <div className="allJobs">
+          {!this.state.userSelectionArea &&
+            this.state.jobData.data.map(data => {
+              if (data.urgent === "true") {
+                return (
+                  <div
+                    onClick={e => this.handleClick(data.id)}
+                    className="urgentJobData"
+                    key={data.id}
+                  >
+                    <p>
+                      <span className="restName">{data.restname}</span>
+                      <span className="busca"> busca </span>
+                      <span className="jobType">{data.jobtype}</span>
+                    </p>
+                    <p>{data.area}</p>
+                    <div className="jobMoment">
+                      <Moment fromNow>{data.created_at}</Moment>
+                    </div>
+                  </div>
+                );
+              }
+            })}{" "}
           {this.state.userSelectionArea &&
             this.state.jobData.data.map(data => {
-              if (this.state.userSelectionArea === data.area) {
+              if (
+                this.state.userSelectionArea === data.area &&
+                data.urgent === "true"
+              ) {
+                return (
+                  <div
+                    onClick={e => this.handleClick(data.id)}
+                    className="urgentJobData"
+                    key={data.id}
+                  >
+                    <p>
+                      <span className="restName">{data.restname}</span>
+                      <span className="busca"> busca </span>
+                      <span className="jobType">{data.jobtype}</span>
+                    </p>
+                    <p>{data.area}</p>
+                    <div className="jobMoment">
+                      <Moment fromNow>{data.created_at}</Moment>
+                    </div>
+                  </div>
+                );
+              }
+            })}
+          {this.state.userSelectionArea &&
+            this.state.jobData.data.map(data => {
+              if (
+                this.state.userSelectionArea === data.area &&
+                data.urgent !== "true"
+              ) {
                 return (
                   <div
                     onClick={e => this.handleClick(data.id)}
@@ -111,7 +154,6 @@ export class Jobs extends React.Component {
                       <span className="busca"> busca </span>
                       <span className="jobType">{data.jobtype}</span>
                     </p>
-
                     <p>{data.area}</p>
                     <div className="jobMoment">
                       <Moment fromNow>{data.created_at}</Moment>
@@ -120,26 +162,27 @@ export class Jobs extends React.Component {
                 );
               }
             })}
-
           {!this.state.userSelectionArea &&
             this.state.jobData.data.map(data => {
-              return (
-                <div
-                  onClick={e => this.handleClick(data.id)}
-                  className="jobData"
-                  key={data.id}
-                >
-                  <p>
-                    <span className="restName">{data.restname}</span>
-                    <span className="busca"> busca </span>
-                    <span className="jobType">{data.jobtype}</span>
-                  </p>
-                  <p>{data.area}</p>
-                  <div className="jobMoment">
-                    <Moment fromNow>{data.created_at}</Moment>
+              if (data.urgent !== "true") {
+                return (
+                  <div
+                    onClick={e => this.handleClick(data.id)}
+                    className="jobData"
+                    key={data.id}
+                  >
+                    <p>
+                      <span className="restName">{data.restname}</span>
+                      <span className="busca"> busca </span>
+                      <span className="jobType">{data.jobtype}</span>
+                    </p>
+                    <p>{data.area}</p>
+                    <div className="jobMoment">
+                      <Moment fromNow>{data.created_at}</Moment>
+                    </div>
                   </div>
-                </div>
-              );
+                );
+              }
             })}
         </div>
       </div>
