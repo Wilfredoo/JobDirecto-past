@@ -6,14 +6,21 @@ export default class UrgentChecked extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.wantsToPay = this.wantsToPay.bind(this);
+    this.doesNotWantToPay = this.doesNotWantToPay.bind(this);
   }
 
-  handleSubmit(event) {
+  wantsToPay(event) {
     event.preventDefault();
     this.props.history.push("/urgentChecked2");
   }
 
+  doesNotWantToPay(event) {
+    event.preventDefault();
+    axios.post("/cancelUrgency").then(resp => {
+      this.props.history.push("/jobConfirm");
+    });
+  }
   render() {
     return (
       <div id="urgentCheckedContainer">
@@ -25,10 +32,12 @@ export default class UrgentChecked extends React.Component {
           ahora? <br />
           <br />
         </p>
-        <button onClick={this.handleSubmit} className="UrgentCheckedButton">
+        <button onClick={this.wantsToPay} className="UrgentCheckedButton">
           Si
         </button>
-        <button className="UrgentCheckedButton">No</button>
+        <button onClick={this.doesNotWantToPay} className="UrgentCheckedButton">
+          No
+        </button>
         <p className="UrgentCheckedText">
           Si marca No su anuncio sera gratis y celeste como el resto.
         </p>

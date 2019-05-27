@@ -35,3 +35,17 @@ INSERT INTO jobs (restName, jobType, hourPay, typePay, schedule, contact, addres
 New York, NY 10281', '(212) 981-8577', 'Manhattan', 'true');
 INSERT INTO jobs (restName, jobType, hourPay, typePay, schedule, contact, address, phone, area, urgent) VALUES ('superRestaurant', 'urgent dishwasher', '16', 'Check', 'lunes marte y miercoles', 'nicola', '225 Liberty St
 New York, NY 10281', '(212) 981-8577', 'Manhattan', 'true');
+
+
+
+
+CREATE TABLE ValidityTest (
+   col1 varchar(100),
+   Created datetime DEFAULT GETDATE()
+);
+
+INSERT INTO ValidityTest (col1) VALUES ('Some row');
+
+SELECT *
+FROM ValidityTest
+WHERE Created >= DATEADD(minute, -10, GETDATE())

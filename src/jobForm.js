@@ -419,6 +419,21 @@ export class JobForm extends React.Component {
             onChange={this.handleChange}
           />
           <br />
+          <p className="formQuestions">
+            Desea que este anuncio sea amarillo?
+          </p>{" "}
+          <p>Si</p>
+          <input
+            className="urgentCheckBox"
+            type="checkbox"
+            name="urgent"
+            defaultValue={
+              this.state.jobData && this.state.jobData.data
+                ? this.state.jobData.data.urgent
+                : true
+            }
+            onChange={this.handleChange}
+          />
           <br />
           <br />
           <br />

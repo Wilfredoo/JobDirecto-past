@@ -15,12 +15,16 @@ export class Jobs extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.hideModal = this.hideModal.bind(this);
+    this.urgentJobInterval = this.urgentJobInterval.bind(this);
   }
 
   componentDidMount() {
     axios.get("/getJobs").then(result => {
       this.setState({ jobData: result.data }, () => {
         console.log("look at this beautiful state: ", this.state.jobData.data);
+        // console.log(this.state.jobData.data[0].moment());
+        // console.log(getHours());
+        // console.log(moment().format());
       });
     });
 
@@ -55,7 +59,22 @@ export class Jobs extends React.Component {
     this.setState({ show: false });
   }
 
+  urgentJobInterval(created_at) {
+    // job timestamp in miliseconds
+    let timeStampMili = new Date(created_at);
+    // now in miliseconds
+    let nowMili = Date.now();
+    // urgent job interval in hours
+    let jobIntervalHours = 48;
+    // job interval in miliseconds
+    let jobIntervalMili = jobIntervalHours * 60 * 60 * 1000;
+    //condition
+    let intervalOp = nowMili - timeStampMili < jobIntervalMili;
+    return intervalOp;
+  }
+
   render() {
+    let date = new Date();
     if (!this.state.jobData || !this.state.urgentJobData) {
       return null;
     }
@@ -92,7 +111,10 @@ export class Jobs extends React.Component {
         <div className="allJobs">
           {!this.state.userSelectionArea &&
             this.state.jobData.data.map(data => {
-              if (data.urgent === "true") {
+              if (
+                data.urgent === "true" &&
+                this.urgentJobInterval(data.created_at) === true
+              ) {
                 return (
                   <div
                     onClick={e => this.handleClick(data.id)}

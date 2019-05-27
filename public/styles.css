@@ -36,8 +36,8 @@
   padding: 20px;
 }
 
-.jobData.white {
-  background-color: white;
+.jobData.yellow {
+  background-color: yellow;
 }
 
 a:link,
@@ -122,6 +122,10 @@ a:visited {
 .jobForm {
   margin: 40px;
   padding: 20px;
+}
+
+.jobForm.yellow {
+  background-color: yellow;
 }
 
 .radio {
