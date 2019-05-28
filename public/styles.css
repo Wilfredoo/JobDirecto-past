@@ -36,8 +36,12 @@
   padding: 20px;
 }
 
-.jobData.white {
-  background-color: white;
+.jobData.yellow {
+  background-color: yellow;
+}
+
+.jobForm.yellow {
+  background-color: yellow;
 }
 
 a:link,
@@ -285,4 +289,9 @@ label {
   height: 130px;
   font-size: 49px;
   margin: 20px;
+}
+
+#urgentExample {
+  width: 120%;
+  height: 120%;
 }
