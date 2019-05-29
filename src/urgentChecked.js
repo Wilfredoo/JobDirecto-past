@@ -24,24 +24,22 @@ export default class UrgentChecked extends React.Component {
   render() {
     return (
       <div id="urgentCheckedContainer">
-        <h1 id="UrgentCheckedTitle">Usted a marcado anuncio amarillo</h1>
+        <h1 id="UrgentCheckedTitle">Usted a marcado anuncio urgente</h1>
         <img id="urgentExample" src="urgentExample3.png" />
         <p className="UrgentCheckedText">
-          Estos anuncios se mantienen arriba en la lista por 2 dias y los ven
-          muchas mas personas. <br />
-          <br /> Los anuncios amarillos tienen un costo de 10$. Desea comprar
-          uno? <br />
+          Los anuncios urgentes son de color amarillo y se mantienen arriba en
+          la lista por 48 horas. <br />
+          <br /> Los anuncios urgentes tienen un costo de 10$. <br />
+          <br />
+          Desea comprar uno? <br />
           <br />
         </p>
-        <button onClick={this.wantsToPay} className="UrgentCheckedButton">
-          Si
+        <button onClick={this.wantsToPay} id="UrgentCheckedButtonYES">
+          SI <br /> (quiero pagar 10$ por un anuncio amarillo)
         </button>
-        <button onClick={this.doesNotWantToPay} className="UrgentCheckedButton">
-          No
+        <button onClick={this.doesNotWantToPay} id="UrgentCheckedButtonNO">
+          NO <br /> (quiero un anuncio gratis y normal)
         </button>
-        <p className="UrgentCheckedText">
-          Si marca No su anuncio sera gratis y celeste como el resto.
-        </p>
       </div>
     );
   }

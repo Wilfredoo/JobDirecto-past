@@ -16,15 +16,13 @@ export class Jobs extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.hideModal = this.hideModal.bind(this);
     this.urgentJobInterval = this.urgentJobInterval.bind(this);
+    this.trackCreateJob = this.trackCreateJob.bind(this);
   }
 
   componentDidMount() {
     axios.get("/getJobs").then(result => {
       this.setState({ jobData: result.data }, () => {
         console.log("look at this beautiful state: ", this.state.jobData.data);
-        // console.log(this.state.jobData.data[0].moment());
-        // console.log(getHours());
-        // console.log(moment().format());
       });
     });
 
@@ -59,6 +57,14 @@ export class Jobs extends React.Component {
     this.setState({ show: false });
   }
 
+  trackCreateJob(event) {
+    ga("send", "event", {
+      eventCategory: "button",
+      eventAction: "createJob",
+      eventLabel: event.target.href
+    });
+  }
+
   urgentJobInterval(created_at) {
     // job timestamp in miliseconds
     let timeStampMili = new Date(created_at);
@@ -86,7 +92,7 @@ export class Jobs extends React.Component {
         )}
         <div className="filtersbutton">
           <div className="filters">
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} onSubmit={this.trackCreateJob}>
               <select
                 className="filter"
                 type="text"
