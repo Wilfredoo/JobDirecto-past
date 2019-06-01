@@ -11,6 +11,8 @@
     "node": "8.11.3"
   },
   "dependencies": {
+    "@types/react-stripe-elements": "^1.1.10",
+    "@types/stripe": "^6.26.3",
     "axios": "^0.15.3",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.20.0",
@@ -41,11 +43,13 @@
     "react-redux": "^5.0.5",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "react-stripe-elements": "^3.0.0",
     "redux": "^3.7.1",
     "redux-devtools-extension": "^2.13.2",
     "redux-promise": "^0.5.3",
     "socket.io": "^2.0.3",
     "spiced-pg": "^1.0.0",
+    "stripe": "^7.1.0",
     "uid-safe": "^2.1.4",
     "webpack": "^1.14.0",
     "webpack-dev-middleware": "^1.8.4"

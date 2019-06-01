@@ -419,7 +419,27 @@ export class JobForm extends React.Component {
             onChange={this.handleChange}
           />
           <br />
-
+          {/*  <p className="formQuestions">
+            Desea ponerle urgencia a este anuncio?
+          </p>{" "}
+          <div id="yesAndCheckbox">
+            <label id="si" htmlFor="urgentCheckBox">
+              Si
+            </label>
+            <input
+              id="urgentCheckBox"
+              type="checkbox"
+              name="urgent"
+              defaultValue={
+                this.state.jobData && this.state.jobData.data
+                  ? this.state.jobData.data.urgent
+                  : true
+              }
+              onChange={this.handleChange}
+              onClick={this.makeUrgent}
+            />
+          </div>
+        */}{" "}
           <br />
           <br />
           <br />

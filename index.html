@@ -1,19 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
 <head>
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="/styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
 </head>
 <main></main>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129656531-1"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-129656531-1"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
 
-  gtag('config', 'UA-129656531-1');
+  gtag("config", "UA-129656531-1");
 </script>
 
 <script src="/path/to/infinite-scroll.pkgd.min.js"></script>
 <script src="/bundle.js"></script>
+
+The URL to which customers are sent once payment is complete. Cancel URL
+www.jobdirecto.com/canceled The URL to which customers are sent when they cancel
+payment.
+<!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
+
+<!--
+  Create a button that your customers click to complete their purchase. Customize the styling to suit your branding.
+-->
+<button
+  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+  id="checkout-button-sku_FAe7tbPK29byHW"
+  role="link"
+>
+  Checkout
+</button>
+
+<div id="error-message"></div>
+
+<script>
+  var stripe = Stripe("pk_live_5PjwBk9dSdW7htTKHQ3HKrTd");
+  var checkoutButton = document.getElementById(
+    "checkout-button-sku_FAe7tbPK29byHW"
+  );
+  checkoutButton.addEventListener("click", function() {
+    stripe
+      .redirectToCheckout({
+        items: [{ sku: "sku_FAe7tbPK29byHW", quantity: 1 }],
+        successUrl:
+          window.location.protocol + "//www.jobdirecto.com/jobConfirm",
+        cancelUrl: window.location.protocol + "//www.jobdirecto.com/errorPage"
+      })
+      .then(function(result) {
+        if (result.error) {
+          var displayError = document.getElementById("error-message");
+          displayError.textContent = result.error.message;
+        }
+      });
+  });
+</script>
