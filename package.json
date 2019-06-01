@@ -30,6 +30,7 @@
     "cookie-session": "^2.0.0-alpha.2",
     "csurf": "^1.9.0",
     "express": "^4.16.4",
+    "express-http-to-https": "^1.1.4",
     "http-proxy-middleware": "^0.17.4",
     "knox": "^0.9.2",
     "moment": "^2.22.2",

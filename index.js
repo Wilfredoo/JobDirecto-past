@@ -4,6 +4,7 @@ const compression = require("compression");
 const database = require("./database.js");
 const cookieSession = require("cookie-session");
 // var http = express.createServer();
+var redirectToHTTPS = require("express-http-to-https").redirectToHTTPS;
 
 app.use(compression());
 app.use(express.static("public"));
@@ -18,6 +19,8 @@ if (process.env.NODE_ENV != "production") {
 } else {
   app.use("/bundle.js", (req, res) => res.sendFile(`${__dirname}/bundle.js`));
 }
+
+app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301));
 
 app.use(require("body-parser").json());
 app.use(
@@ -184,8 +187,8 @@ app.get("*", function(req, res) {
   res.sendFile(__dirname + "/index.html");
 });
 
-app.get("*", function(req, res) {
-  res.redirect("https://" + req.headers.host + req.url);
-});
+// app.get("*", function(req, res) {
+//   res.redirect("https://" + req.headers.host + req.url);
+// });
 
 app.listen(process.env.PORT || 8080);
