@@ -7,7 +7,6 @@ import LoginOrRegister from "./loginorregister.js";
 import Login from "./login.js";
 import Register from "./register.js";
 import UrgentChecked from "./urgentChecked.js";
-import UrgentChecked2 from "./urgentChecked2.js";
 import { BrowserRouter, Route } from "react-router-dom";
 import ReactGA from "react-ga";
 
@@ -26,7 +25,6 @@ export class App extends React.Component {
         <div>
           <Route path="/jobform" component={JobForm} />
           <Route path="/urgentChecked" component={UrgentChecked} />
-          <Route path="/urgentChecked2" component={UrgentChecked2} />
           <Route path="/loginorregister" component={LoginOrRegister} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />

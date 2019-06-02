@@ -1,18 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import StripeButton from "./stripebutton.js";
 
 export default class UrgentChecked extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.wantsToPay = this.wantsToPay.bind(this);
     this.doesNotWantToPay = this.doesNotWantToPay.bind(this);
-  }
-
-  wantsToPay(event) {
-    event.preventDefault();
-    this.props.history.push("/urgentChecked2");
   }
 
   doesNotWantToPay(event) {
@@ -34,9 +29,7 @@ export default class UrgentChecked extends React.Component {
           Desea comprar uno? <br />
           <br />
         </p>
-        <button onClick={this.wantsToPay} id="UrgentCheckedButtonYES">
-          SI <br /> (quiero pagar 10$ por un anuncio amarillo)
-        </button>
+        <StripeButton />
         <button onClick={this.doesNotWantToPay} id="UrgentCheckedButtonNO">
           NO <br /> (quiero un anuncio gratis y normal)
         </button>
