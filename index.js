@@ -3,7 +3,7 @@ const app = express();
 const compression = require("compression");
 const database = require("./database.js");
 const cookieSession = require("cookie-session");
-
+const redirectToHTTPS = require("express-http-to-https").redirectToHTTPS;
 app.use(compression());
 app.use(express.static("public"));
 
@@ -46,6 +46,7 @@ app.get("/getDate", function(req, res) {
   });
 });
 
+app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301));
 app.get("/getJobDetails/:id", function(req, res) {
   return database.getJobInfo(req.params.id).then(data => {
     res.json({
@@ -133,7 +134,6 @@ app.post("/publishJob", (req, res) => {
       });
     });
 });
-
 app.post("/register", function(req, res) {
   database
     .hashPassword(req.body.password)
