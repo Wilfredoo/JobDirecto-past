@@ -8,6 +8,12 @@ export default class UrgentChecked extends React.Component {
     super(props);
     this.state = {};
     this.doesNotWantToPay = this.doesNotWantToPay.bind(this);
+    this.wantsToPay = this.wantsToPay.bind(this);
+  }
+
+  wantsToPay(event) {
+    event.preventDefault();
+    this.props.history.push("/jobConfirm");
   }
 
   doesNotWantToPay(event) {
@@ -30,6 +36,10 @@ export default class UrgentChecked extends React.Component {
           <br />
         </p>
         <StripeButton />
+        <button onClick={this.wantsToPay} id="UrgentCheckedButtonNO">
+          yahoo <br />
+        </button>
+
         <button onClick={this.doesNotWantToPay} id="UrgentCheckedButtonNO">
           NO <br /> (quiero un anuncio gratis y normal)
         </button>
