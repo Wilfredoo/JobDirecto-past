@@ -33,6 +33,7 @@ app.use(
 );
 
 app.get("/getJobInfo", function(req, res) {
+  console.log("session in get job ifo (jobconfirm): ", req.session);
   res.json({
     data: req.session.job
   });
@@ -89,12 +90,12 @@ app.get("/jobform", async function(req, res) {
 });
 
 app.post("/finalizeJob", (req, res) => {
-  // console.log("req body1: ", req.body);
+  console.log("req body1: ", req.body);
   req.session.job = req.body;
   res.json({
     success: true
   });
-  // console.log("req session job2: ", req.session.job);
+  console.log("req session job2: ", req.session.job);
 });
 
 app.post("/cancelUrgency", function(req, res) {
