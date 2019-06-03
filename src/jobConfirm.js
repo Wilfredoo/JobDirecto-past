@@ -14,14 +14,9 @@ export class JobConfirm extends React.Component {
 
   componentDidMount() {
     axios.get("/getJobInfo").then(result => {
+      console.log("result data here: ", result.data);
       if (result.data.success == false) {
         return null;
-      }
-      if (result.data.data.otro_desc === "") {
-        result.data.data.otro_desc = result.data.data.jobtype;
-        this.setState({
-          jobData: result.data
-        });
       } else {
         this.setState({
           jobData: result.data
@@ -64,22 +59,13 @@ export class JobConfirm extends React.Component {
                 {this.state.jobData.data.restname}
               </td>
             </tr>
-            {this.state.jobData.data.jobtype !== "Otro" && (
-              <tr>
-                <td className="jobDetailsText">Puesto:</td>
-                <td className="jobDetailsText">
-                  {this.state.jobData.data.jobtype}
-                </td>
-              </tr>
-            )}
-            {this.state.jobData.data.jobtype === "Otro" && (
-              <tr>
-                <td className="jobDetailsText">Puesto:</td>
-                <td className="jobDetailsText">
-                  {this.state.jobData.data.otro_desc}
-                </td>
-              </tr>
-            )}
+            <tr>
+              <td className="jobDetailsText">Puesto:</td>
+              <td className="jobDetailsText">
+                {this.state.jobData.data.jobtype}
+              </td>
+            </tr>
+
             <tr>
               <td className="jobDetailsText">Salario:</td>
               <td className="jobDetailsText">

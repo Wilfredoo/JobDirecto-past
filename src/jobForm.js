@@ -419,7 +419,7 @@ export class JobForm extends React.Component {
             onChange={this.handleChange}
           />
           <br />
-          {/*
+          {/**/}
           <p className="formQuestions">
             Desea ponerle urgencia a este anuncio?
           </p>{" "}
@@ -439,7 +439,7 @@ export class JobForm extends React.Component {
               onChange={this.handleChange}
               onClick={this.makeUrgent}
             />
-          </div>{" "}*/}
+          </div>{" "}
           <br />
           <br />
           <br />
