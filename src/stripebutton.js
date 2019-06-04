@@ -9,8 +9,10 @@ function StripeButton() {
     stripe
       .redirectToCheckout({
         items: [{ sku: "sku_FAe7tbPK29byHW", quantity: 1 }],
-        successUrl: window.location.protocol + "//jobdirecto.com/jobConfirm",
-        cancelUrl: window.location.protocol + "//jobdirecto.com/StripeButton"
+        successUrl:
+          window.location.protocol + "//www.jobdirecto.com/jobConfirm",
+        cancelUrl:
+          window.location.protocol + "//www.jobdirecto.com/StripeButton"
       })
       .then(result => {
         if (result.error) {
