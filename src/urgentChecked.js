@@ -36,9 +36,6 @@ export default class UrgentChecked extends React.Component {
           <br />
         </p>
         <StripeButton />
-        <button onClick={this.wantsToPay} id="UrgentCheckedButtonNO">
-          yahoo <br />
-        </button>
 
         <button onClick={this.doesNotWantToPay} id="UrgentCheckedButtonNO">
           NO <br /> (quiero un anuncio gratis y normal)
