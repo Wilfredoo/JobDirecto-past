@@ -29,6 +29,7 @@ app.use(
   cookieSession({
     secret: `I'm always angry.`,
     maxAge: 1000 * 60 * 60 * 24 * 14
+    // httpOnly: true
   })
 );
 
@@ -48,6 +49,7 @@ app.get("/getDate", function(req, res) {
 });
 
 app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301));
+
 app.get("/getJobDetails/:id", function(req, res) {
   return database.getJobInfo(req.params.id).then(data => {
     res.json({
@@ -91,11 +93,13 @@ app.get("/jobform", async function(req, res) {
 
 app.post("/finalizeJob", (req, res) => {
   console.log("req body1: ", req.body);
+  console.log("req session before: ", req.session);
+
   req.session.job = req.body;
   res.json({
     success: true
   });
-  console.log("req session job2: ", req.session.job);
+  console.log("req session after: ", req.session);
 });
 
 app.post("/cancelUrgency", function(req, res) {
