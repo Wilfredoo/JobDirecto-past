@@ -33,7 +33,6 @@ export class JobForm extends React.Component {
   }
 
   makeUrgent() {
-    console.log("this is being checked");
     this.setState({ addClass: !this.state.addClass });
     // addClass backgroundColor yellow to .jobForm
   }
@@ -421,7 +420,7 @@ export class JobForm extends React.Component {
           <br />
           {/**/}
           <p className="formQuestions">
-            Desea ponerle urgencia a este anuncio?
+            Desea que su anuncio sea TOP (amarillo y urgente)?
           </p>{" "}
           <div id="yesAndCheckbox">
             <label id="si" htmlFor="urgentCheckBox">

@@ -161,6 +161,38 @@ exports.registerUser = function(email, hashedpw) {
     });
 };
 
+exports.doesNotWantToPay = function() {
+  return db
+    .query(
+      `
+        INSERT INTO temporalAnalytics
+        (doesNotWantToPay)
+        VALUES ($1)
+        RETURNING *;
+        `,
+      ["X"]
+    )
+    .then(function(results) {
+      return results.rows;
+    });
+};
+
+exports.wantsToPay = function() {
+  return db
+    .query(
+      `
+        INSERT INTO temporalAnalytics
+        (wantsToPay)
+        VALUES ($1)
+        RETURNING *;
+        `,
+      ["X"]
+    )
+    .then(function(results) {
+      return results.rows;
+    });
+};
+
 exports.getLoginId = function(email) {
   return db
     .query(`SELECT id FROM users WHERE email = $1`, [email])

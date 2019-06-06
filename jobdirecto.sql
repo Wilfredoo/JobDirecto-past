@@ -16,6 +16,14 @@ CREATE TABLE jobs(
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE temporalAnalytics(
+    id SERIAL PRIMARY KEY,
+    wantsToPay VARCHAR(300),
+    doesNotWantToPay VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
 INSERT INTO jobs (restName, jobType, hourPay, typePay, schedule, contact, address, phone, area, urgent) VALUES ('Tribeca bagels', 'Cocinero', '14', 'cash', 'lunes a viernes tardes hasta cerrar', 'juana marcos', '127 East 7th
 New York, NY 10009', '(646) 850-5345', 'manhattan', 'false');
 INSERT INTO jobs (restName, jobType, hourPay, typePay, schedule, contact, address, phone, area, urgent) VALUES ('Bubbas Bistro', 'Cocinero con experiencia', '13', 'ambos', 'fines de semana', 'maria', '2071 Clove Rd
@@ -28,7 +36,6 @@ INSERT INTO jobs (restName, jobType, hourPay, typePay, schedule, contact, addres
 New York, NY 10065', '(212) 288-0033', 'Manhattan', 'false');
 INSERT INTO jobs (restName, jobType, hourPay, typePay, schedule, contact, address, phone, area, urgent) VALUES ('East village deli', 'Lavaplatos', '13', 'ambos', 'fines de semana', 'maria', '2071 Clove Rd
 Staten Island, NY 10304', '(718) 524-7174', 'Staten Island', 'false');
-
 INSERT INTO jobs (restName, jobType, hourPay, typePay, schedule, contact, address, phone, area, urgent) VALUES ('Molo Ristorante', 'Pizzero', '16', 'Check', 'lunes marte y miercoles', 'nicola', '225 Liberty St
 New York, NY 10281', '(212) 981-8577', 'Manhattan', 'true');
 INSERT INTO jobs (restName, jobType, hourPay, typePay, schedule, contact, address, phone, area, urgent) VALUES ('Poco NYC', 'Cocinero', '16', 'Check', 'lunes marte y miercoles', 'nicola', '225 Liberty St

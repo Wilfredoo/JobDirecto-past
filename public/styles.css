@@ -275,10 +275,11 @@ label {
 
 #urgentCheckedContainer {
   margin: 60px;
+  text-align: center;
 }
 
 #UrgentCheckedTitle {
-  font-size: 30px;
+  font-size: 50px;
 }
 
 .UrgentCheckedText {

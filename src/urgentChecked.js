@@ -8,29 +8,26 @@ export default class UrgentChecked extends React.Component {
     super(props);
     this.state = {};
     this.doesNotWantToPay = this.doesNotWantToPay.bind(this);
-    this.wantsToPay = this.wantsToPay.bind(this);
-  }
-
-  wantsToPay(event) {
-    event.preventDefault();
-    this.props.history.push("/jobConfirm");
+    // this.wantsToPay = this.wantsToPay.bind(this);
   }
 
   doesNotWantToPay(event) {
     event.preventDefault();
-    axios.post("/cancelUrgency").then(resp => {
-      this.props.history.push("/jobConfirm");
+    this.props.history.push("/jobConfirm");
+    axios.post("/doesNotWantToPay").then(resp => {
+      console.log("no pay");
     });
   }
+
   render() {
     return (
       <div id="urgentCheckedContainer">
-        <h1 id="UrgentCheckedTitle">Usted a marcado anuncio urgente</h1>
-        <img id="urgentExample" src="urgentExample3.png" />
+        <h1 id="UrgentCheckedTitle">Usted a marcado anuncio TOP</h1>
+        <img id="urgentExample" src="urgentExample.png" />
         <p className="UrgentCheckedText">
-          Los anuncios urgentes son de color amarillo y se mantienen arriba en
-          la lista por 48 horas. <br />
-          <br /> Los anuncios urgentes tienen un costo de 10$. <br />
+          Los anuncios TOP son de color amarillo y se mantienen arriba en la
+          lista por 48 horas. <br />
+          <br /> Los anuncios TOP tienen un costo de 10$. <br />
           <br />
           Desea comprar uno? <br />
           <br />

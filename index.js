@@ -34,7 +34,6 @@ app.use(
 );
 
 app.get("/getJobInfo", function(req, res) {
-  console.log("session in get job ifo (jobconfirm): ", req.session);
   res.json({
     data: req.session.job
   });
@@ -92,9 +91,6 @@ app.get("/jobform", async function(req, res) {
 });
 
 app.post("/finalizeJob", (req, res) => {
-  console.log("req body1: ", req.body);
-  console.log("req session before: ", req.session);
-
   req.session.job = req.body;
   res.json({
     success: true
@@ -103,19 +99,31 @@ app.post("/finalizeJob", (req, res) => {
 });
 
 app.post("/cancelUrgency", function(req, res) {
-  console.log("A", req.session);
   delete req.session.urgent;
   req.session.job.urgent = null;
 
   res.json({
     success: true
   });
-  console.log("B", req.session);
-  console.log("C", req.body);
+});
+
+app.post("/doesNotWantToPay", (req, res) => {
+  return database.doesNotWantToPay().then(() => {
+    res.json({
+      success: true
+    });
+  });
+});
+
+app.post("/wantsToPay", (req, res) => {
+  return database.wantsToPay().then(() => {
+    res.json({
+      success: true
+    });
+  });
 });
 
 app.post("/publishJob", (req, res) => {
-  console.log("this is req body in publishJob", req.body);
   return database
     .publishJob(
       req.body.jobData.data.restname,
@@ -139,6 +147,7 @@ app.post("/publishJob", (req, res) => {
       });
     });
 });
+
 app.post("/register", function(req, res) {
   database
     .hashPassword(req.body.password)

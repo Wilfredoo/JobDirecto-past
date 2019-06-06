@@ -4,6 +4,7 @@ import axios from "axios";
 import Modal from "./modal";
 import Moment from "react-moment";
 import "moment/locale/es";
+var ReactGA = require("react-ga");
 
 export class Jobs extends React.Component {
   constructor(props) {
