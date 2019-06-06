@@ -5,7 +5,7 @@ function StripeButton() {
   const stripe = Stripe("pk_live_5PjwBk9dSdW7htTKHQ3HKrTd");
 
   const wantsToPay = () => {
-    console.log("i am working wantstoPay");
+    console.log("someone wants to pay");
     event.preventDefault();
     axios.post("/wantsToPay").then(resp => {
       console.log("yes pay");
