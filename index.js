@@ -65,6 +65,7 @@ app.get("/getJobforCorrect", function(req, res) {
 });
 
 app.get("/getJobs", function(req, res) {
+  req.session = null;
   return database.getJobs().then(data => {
     res.json({
       data
@@ -99,14 +100,14 @@ app.post("/finalizeJob", (req, res) => {
 });
 
 app.post("/cancelUrgency", function(req, res) {
-  req.session.job.urgent = false;
-
   res.json({
     success: true
   });
 });
 
 app.post("/doesNotWantToPay", (req, res) => {
+  // req.session.job.urgent = null;
+  // console.log("asdasd", req.body);
   return database.doesNotWantToPay().then(() => {
     res.json({
       success: true
