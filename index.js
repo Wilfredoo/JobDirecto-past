@@ -91,7 +91,6 @@ app.get("/jobform", async function(req, res) {
 });
 
 app.post("/finalizeJob", (req, res) => {
-  console.log(req.session.job.urgent);
   req.session.job = req.body;
   res.json({
     success: true
@@ -100,8 +99,7 @@ app.post("/finalizeJob", (req, res) => {
 });
 
 app.post("/cancelUrgency", function(req, res) {
-  delete req.session.urgent;
-  req.session.job.urgent = null;
+  req.session.job.urgent = false;
 
   res.json({
     success: true
