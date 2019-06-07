@@ -107,15 +107,6 @@ app.post("/cancelUrgency", function(req, res) {
   });
 });
 
-app.post("/doesNotWantToPay", (req, res) => {
-  // console.log("asdasd", req.body);
-  return database.doesNotWantToPay().then(() => {
-    res.json({
-      success: true
-    });
-  });
-});
-
 app.post("/wantsToPay", (req, res) => {
   return database.wantsToPay().then(() => {
     res.json({

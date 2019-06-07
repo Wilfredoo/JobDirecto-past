@@ -161,12 +161,12 @@ exports.registerUser = function(email, hashedpw) {
     });
 };
 
-exports.doesNotWantToPay = function() {
+exports.cancelUrgency = function() {
   return db
     .query(
       `
         INSERT INTO temporalAnalytics
-        (doesNotWantToPay)
+        (cancelUrgency)
         VALUES ($1)
         RETURNING *;
         `,
