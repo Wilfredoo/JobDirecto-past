@@ -91,6 +91,7 @@ app.get("/jobform", async function(req, res) {
 });
 
 app.post("/finalizeJob", (req, res) => {
+  console.log(req.session.job.urgent);
   req.session.job = req.body;
   res.json({
     success: true

@@ -18,6 +18,7 @@ export default class UrgentChecked extends React.Component {
     axios.post("/doesNotWantToPay").then(resp => {
       console.log("no pay");
     });
+    axios.post("/cancelUrgency").then(resp => {});
   }
 
   render() {

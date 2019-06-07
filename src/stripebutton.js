@@ -4,14 +4,6 @@ import axios from "axios";
 function StripeButton() {
   const stripe = Stripe("pk_live_5PjwBk9dSdW7htTKHQ3HKrTd");
 
-  const wantsToPay = () => {
-    console.log("someone wants to pay");
-    event.preventDefault();
-    axios.post("/wantsToPay").then(resp => {
-      console.log("yes pay");
-    });
-  };
-
   const [error, setError] = useState();
 
   const handleClick = () => {
@@ -28,15 +20,17 @@ function StripeButton() {
           setError(result.error.message);
         }
       });
+
+    console.log("someone wants to pay");
+    event.preventDefault();
+    axios.post("/wantsToPay").then(resp => {
+      console.log("yes pay");
+    });
   };
 
   return (
     <div>
-      <button
-        onClick={wantsToPay}
-        id="UrgentCheckedButtonYES"
-        onClick={handleClick}
-      >
+      <button id="UrgentCheckedButtonYES" onClick={handleClick}>
         SI <br /> (quiero pagar 10$ por un anuncio TOP)
       </button>
       <div>{error}</div>
