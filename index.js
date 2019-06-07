@@ -100,8 +100,8 @@ app.post("/finalizeJob", (req, res) => {
 });
 
 app.post("/cancelUrgency", function(req, res) {
-  delete req.session.urgent;
-  req.session.job.urgent = null;
+  // delete req.session.urgent;
+  req.session.job.urgent = "false";
   res.json({
     success: true
   });
