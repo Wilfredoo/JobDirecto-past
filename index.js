@@ -100,13 +100,14 @@ app.post("/finalizeJob", (req, res) => {
 });
 
 app.post("/cancelUrgency", function(req, res) {
+  delete req.session.urgent;
+  req.session.job.urgent = null;
   res.json({
     success: true
   });
 });
 
 app.post("/doesNotWantToPay", (req, res) => {
-  // req.session.job.urgent = null;
   // console.log("asdasd", req.body);
   return database.doesNotWantToPay().then(() => {
     res.json({
