@@ -17,7 +17,6 @@ export default class UrgentChecked extends React.Component {
     axios.post("/cancelUrgency").then(resp => {
       this.props.history.push("/jobConfirm");
     });
-    console.log(this.state);
   }
 
   render() {

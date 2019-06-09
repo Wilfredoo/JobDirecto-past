@@ -19,7 +19,7 @@
 }
 
 .urgentJobData {
-  width: 42%;
+  width: 42.5%;
   background-color: yellow;
   border-style: solid;
   border-width: 6px;
@@ -29,7 +29,7 @@
 }
 
 .jobData {
-  width: 42%;
+  width: 42.5%;
   background-color: #b0dfe5;
   border-style: solid;
   margin: 10px;
