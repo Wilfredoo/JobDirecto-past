@@ -7,11 +7,11 @@ export default class UrgentChecked extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.doesNotWantToPay = this.doesNotWantToPay.bind(this);
+    this.cancelUrgency = this.cancelUrgency.bind(this);
     // this.wantsToPay = this.wantsToPay.bind(this);
   }
 
-  doesNotWantToPay(event) {
+  cancelUrgency(event) {
     console.log("someone does not want to pay");
     event.preventDefault();
     axios.post("/cancelUrgency").then(resp => {});
@@ -33,7 +33,7 @@ export default class UrgentChecked extends React.Component {
         </p>
         <StripeButton />
 
-        <button onClick={this.doesNotWantToPay} id="UrgentCheckedButtonNO">
+        <button onClick={this.cancelUrgency} id="UrgentCheckedButtonNO">
           NO <br /> (quiero un anuncio gratis y normal)
         </button>
       </div>
