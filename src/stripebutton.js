@@ -31,7 +31,8 @@ function StripeButton() {
   return (
     <div>
       <button id="UrgentCheckedButtonYES" onClick={handleClick}>
-        SI <br /> (quiero pagar 10$ por un anuncio TOP)
+        Pagar 10$ por un anuncio TOP
+        <br />
       </button>
       <div>{error}</div>
     </div>
