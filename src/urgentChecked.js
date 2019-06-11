@@ -25,11 +25,10 @@ export default class UrgentChecked extends React.Component {
         <h1 id="UrgentCheckedTitle">Usted a marcado anuncio TOP</h1>
         <img id="urgentExample" src="urgentExample.png" />
         <p className="UrgentCheckedText">
-          Los anuncios TOP son de color amarillo y se mantienen arriba en la
-          lista por 48 horas. <br />
-          <br /> Los anuncios TOP tienen un costo de 10$. <br />
+          Los anuncios TOP son de color dorado y se mantienen arriba en la lista
+          por 48 horas. Tienen un costo de 10$ y lo usan quienes buscan staff
+          con urgencia. <br />
           <br />
-          Desea comprar uno? <br />
           <br />
         </p>
         <StripeButton />
