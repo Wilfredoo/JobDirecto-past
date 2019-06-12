@@ -255,6 +255,7 @@ label {
 
 .restName {
   color: black;
+  word-break: break-word;
 }
 
 .busca {
