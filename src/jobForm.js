@@ -420,7 +420,7 @@ export class JobForm extends React.Component {
           <br />
           {/**/}
           <p className="formQuestions">
-            Desea que su anuncio sea TOP (amarillo y urgente)?
+            Desea que su anuncio sea amarillo?
           </p>{" "}
           <div id="yesAndCheckbox">
             <label id="si" htmlFor="urgentCheckBox">

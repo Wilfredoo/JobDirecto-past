@@ -26,7 +26,7 @@ export default class UrgentChecked extends React.Component {
         <img id="urgentExample" src="urgentExample.png" />
         <p className="UrgentCheckedText">
           Los anuncios TOP son de color dorado y se mantienen arriba en la lista
-          por 48 horas. Tienen un costo de 10$ y lo usan quienes buscan staff
+          por 48 horas. Tienen un costo de 10$ y lo usan quienes buscan gente
           con urgencia. <br />
           <br />
           <br />
@@ -34,7 +34,7 @@ export default class UrgentChecked extends React.Component {
         <StripeButton />
 
         <button onClick={this.cancelUrgency} id="UrgentCheckedButtonNO">
-          Cambie de opinion, deseo un anuncio gratis y celeste <br />
+          Quiero un anuncio comun y corriente (gratis) <br />
         </button>
       </div>
     );
