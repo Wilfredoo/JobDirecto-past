@@ -266,6 +266,7 @@ label {
   font-size: 45px;
   color: black;
   font-weight: 900;
+  word-break: break-word;
 }
 
 .switch {
