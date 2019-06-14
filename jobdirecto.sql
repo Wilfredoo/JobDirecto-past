@@ -38,4 +38,4 @@ INSERT INTO jobs (restName, jobType, hourPay, typePay, schedule, contact, addres
 Staten Island, NY 10304', '(718) 524-7174', 'Staten Island', 'false');
 INSERT INTO jobs (restName, jobType, hourPay, typePay, schedule, contact, address, phone, area, urgent) VALUES ('Molo Ristorante', 'Pizzero', '16', 'Check', 'lunes marte y miercoles', 'nicola', '225 Liberty St
 New York, NY 10281', '(212) 981-8577', 'Manhattan', 'true');
-INSERT INTO jobs (restName, jobType, hourPay, typePay, schedule, contact, address, phone, area, urgent) VALUES ('The Shady Lady', 'Cook for breakfast/brunch', '', '', 'Saturday and Sunday from 8am - 5pm, part time is available', '', 'Apply in person at The Shady Lady. 34-19 30 Avenue, Astoria, NY 11103', '', 'Queens', 'true');
+INSERT INTO jobs (restName, jobType, hourPay, typePay, schedule, contact, address, phone, area, extrainfo, urgent) VALUES ('Pizeria en Mamaroneck', 'front counter', '', '', 'part time o full time hay', '', '', '', 'Otra area en NY', 'se le entrena si tiene poca experiencia, se busca gente que pueda empezar de inmediato', 'true');
