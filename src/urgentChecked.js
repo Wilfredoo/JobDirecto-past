@@ -22,19 +22,20 @@ export default class UrgentChecked extends React.Component {
   render() {
     return (
       <div id="urgentCheckedContainer">
-        <h1 id="UrgentCheckedTitle">Usted a marcado anuncio TOP</h1>
+        <h1 id="UrgentCheckedTitle">Usted a marcado anuncio CALIDAD</h1>
         <img id="urgentExample" src="urgentExample.png" />
         <p className="UrgentCheckedText">
-          Los anuncios TOP son de color dorado y se mantienen arriba en la lista
-          por 48 horas. Tienen un costo de 10$ y lo usan quienes buscan gente
-          con urgencia. <br />
+          Los anuncios CALIDAD los ven muchas mas personas. <br />
+          <br />
+          Quienes usan anuncios de CALIDAD se diferencian del resto y consiguen
+          gente mas rapido y con experiencia. Cuestan tan solo 10$.
           <br />
           <br />
         </p>
         <StripeButton />
 
         <button onClick={this.cancelUrgency} id="UrgentCheckedButtonNO">
-          Quiero un anuncio comun y corriente (gratis) <br />
+          Quiero un anuncio gratis y común <br />
         </button>
       </div>
     );

@@ -4,7 +4,7 @@ body {
 
 /* jobs page */
 .allJobs {
-  margin-top: 130px;
+  margin-top: 190px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -24,17 +24,27 @@ body {
 
 .urgentJobData {
   width: 42.5%;
-  background-color: yellow;
+  background-color: #004f94;
+  background-color: #adff2f;
   border-style: solid;
   border-width: 6px;
   margin: 10px;
   font-size: 40px;
+  line-height: 65px;
   padding: 20px;
+  color: black;
+}
+
+.jobTypeUrgent {
+  font-size: 55px;
+  color: black;
+  font-weight: 750;
+  word-break: break-word;
 }
 
 .jobData {
   width: 42.5%;
-  background-color: #b0dfe5;
+  background-color: #fffdd0;
   border-style: solid;
   margin: 10px;
   font-size: 40px;
@@ -60,7 +70,6 @@ a:visited {
   display: flex;
   flex-wrap: nowrap;
   margin: 30px;
-  margin-top: 80px;
 }
 
 .filters {
@@ -68,30 +77,34 @@ a:visited {
   display: flex;
 }
 
-.filter {
-  height: 80px;
-  width: 260px;
-  font-size: 30px;
-  margin: 12px;
-  background-color: #f1f1f1;
+#createJob {
   left: 90px;
   position: absolute;
-}
-
-#createJob {
   height: 100px;
   width: 300px;
   font-size: 40px;
   margin-right: 10px;
   background-color: dodgerblue;
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.buttonsAndFilters {
+  margin-top: 80px;
+}
+
+.filter {
+  height: 100px;
+  width: 300px;
+  font-size: 30px;
+  margin: 12px;
+  background-color: #f1f1f1;
   float: right;
   right: 100px;
   position: absolute;
-  color: white;
-  font-weight: bold;
 }
 
-/* job details page */
 #jobDetails {
   margin: 10px;
   padding: 10px;
@@ -144,6 +157,9 @@ a:visited {
   width: 50%;
   height: 100px;
   font-size: 50px;
+  background-color: dodgerblue;
+  color: white;
+  margin-top: 50px;
 }
 
 /* confirm page */
@@ -239,8 +255,7 @@ label {
   font-size: 24px;
   animation: blinker 1s linear infinite;
 }
-
-@keyframes blinker {
+Urgent @keyframes blinker {
   50% {
     opacity: 0;
   }
@@ -258,18 +273,15 @@ label {
 }
 
 .restName {
-  color: black;
   word-break: break-word;
 }
 
 .busca {
-  color: black;
   font-style: italic;
 }
 
 .jobType {
   font-size: 45px;
-  color: black;
   font-weight: 900;
   word-break: break-word;
 }
@@ -296,16 +308,18 @@ label {
   width: 80%;
   height: 200px;
   font-size: 49px;
+  font-weight: bold;
   margin: 20px;
-  background-color: yellow;
+  background-color: dodgerblue;
+  color: white;
 }
 
 #UrgentCheckedButtonNO {
   width: 80%;
   height: 200px;
-  font-size: 49px;
+  font-size: 40px;
   margin: 20px;
-  background-color: #b0dfe5;
+  background-color: #fffdd0;
 }
 
 #urgentExample {
@@ -314,11 +328,122 @@ label {
 }
 
 #si {
-  font-size: 60px;
+  font-size: 52px;
   margin-right: 30px;
+  font-weight: 750;
+  font-style: bold;
+  color: navy;
 }
 
 #urgentCheckBox {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
+  border: 1em solid #000;
+  background-color: blue;
+  color: blue;
+}
+
+#formTitle {
+  margin-bottom: 60px;
+}
+
+#sellingPitchInForm {
+  font-size: 15px;
+  margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .jobData,
+  .urgentJobData {
+    width: 15.5%;
+    font-size: 20px;
+  }
+
+  .urgentJobData {
+    line-height: 40px;
+  }
+
+  .filter {
+    position: relative;
+    left: 400px;
+    font-size: 30px;
+  }
+
+  .allJobs {
+    margin-top: 60px;
+  }
+
+  .jobType {
+    font-size: 25px;
+  }
+
+  .jobMoment {
+    font-size: 17px;
+  }
+
+  #createJob {
+    font-size: 30px;
+  }
+
+  .formQuestions {
+    font-size: 27px;
+  }
+
+  .formInputs {
+    width: 30%;
+    height: 30px;
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  .radio {
+    width: 2em;
+    height: 2em;
+  }
+
+  #urgentCheckBox {
+    width: 30px;
+    height: 30px;
+  }
+
+  #si {
+    font-size: 25px;
+  }
+
+  #listo {
+    width: 400px;
+    height: 50px;
+    font-size: 25px;
+    background-color: dodgerblue;
+    color: white;
+    font-weight: bold;
+  }
+
+  .jobTypeUrgent {
+    font-size: 35px;
+  }
+
+  #urgentExample {
+    width: 550px;
+  }
+
+  #UrgentCheckedTitle {
+    font-size: 25px;
+  }
+}
+#urgentCheckedContainer {
+  text-align: left;
+}
+
+.UrgentCheckedText {
+  font-size: 30px;
+  margin-top: -60px;
+}
+
+#UrgentCheckedButtonYES,
+#UrgentCheckedButtonNO {
+  width: 530px;
+  height: 100px;
+  font-size: 30px;
+  font-weight: bold;
 }

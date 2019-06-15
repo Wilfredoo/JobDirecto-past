@@ -91,28 +91,35 @@ export class Jobs extends React.Component {
         {this.state.show && (
           <Modal id={this.state.selectedJobId} close={this.hideModal} />
         )}
-        <div className="filtersbutton">
-          <div className="filters">
-            <form onSubmit={this.handleSubmit} onSubmit={this.trackCreateJob}>
-              <select
-                className="filter"
-                type="text"
-                name="area"
-                onChange={this.handleChangeArea}
-              >
-                <option value="">Todo NY</option>
-                <option value="Manhattan">Manhattan</option>
-                <option value="Brooklyn">Brooklyn</option>
-                <option value="Queens">Queens</option>
-                <option value="El Bronx">El Bronx</option>
-                <option value="Staten Island">Staten Island</option>
-                <option value="Otra area en NY">Otra area en NY</option>
-              </select>
-            </form>
-          </div>
+        <div className="buttonsAndFilters">
           <Link to="/jobForm">
-            <input id="createJob" type="submit" value="Busco gente" />
+            <input id="createJob" type="submit" value="Crear anuncio" />
           </Link>
+
+          <div className="filtersbutton">
+            <div className="filters">
+              <form onSubmit={this.handleSubmit} onSubmit={this.trackCreateJob}>
+                <select
+                  className="filter"
+                  type="text"
+                  name="area"
+                  onChange={this.handleChangeArea}
+                >
+                  <option value="">&#160;&#160;Todo NY</option>
+                  <option value="Manhattan">&#160;&#160;Manhattan</option>
+                  <option value="Brooklyn">&#160;&#160;Brooklyn</option>
+                  <option value="Queens">&#160;&#160;Queens</option>
+                  <option value="El Bronx">&#160;&#160;El Bronx</option>
+                  <option value="Staten Island">
+                    &#160;&#160;Staten Island
+                  </option>
+                  <option value="Otra area en NY">
+                    &#160;&#160;Otra area en NY
+                  </option>
+                </select>
+              </form>
+            </div>
+          </div>
         </div>
 
         <div className="allJobs">
@@ -131,7 +138,7 @@ export class Jobs extends React.Component {
                     <p>
                       <span className="restName">{data.restname}</span>
                       <span className="busca"> busca </span>
-                      <span className="jobType">{data.jobtype}</span>
+                      <span className="jobTypeUrgent">{data.jobtype}</span>
                     </p>
                     <p>{data.area}</p>
                     <div className="jobMoment">

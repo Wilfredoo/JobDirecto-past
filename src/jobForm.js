@@ -63,10 +63,8 @@ export class JobForm extends React.Component {
     return (
       <div className={jobFormClass.join(" ")}>
         <form onSubmit={this.handleSubmit}>
-          <h1>Crear Nuevo Puesto</h1>
-          <p className="formQuestions">
-            Como se llama su restaurante o empresa?
-          </p>
+          <h1 id="formTitle">Crear Anuncio de Trabajo en segundos</h1>
+          <p className="formQuestions">Como se llama su negocio?</p>
           <input
             className="formInputs"
             type="text"
@@ -79,7 +77,7 @@ export class JobForm extends React.Component {
             required="required"
             onChange={this.handleChange}
           />
-          <p className="formQuestions">Que posicion busca?</p>
+          <p className="formQuestions">Que busca?</p>
           <input
             className="formInputs"
             type="text"
@@ -419,12 +417,15 @@ export class JobForm extends React.Component {
           />
           <br />
           {/**/}
-          <p className="formQuestions">
-            Desea que su anuncio sea amarillo?
-          </p>{" "}
+          <p className="formQuestions">Desea un anuncio de CALIDAD?</p>{" "}
+          <p id="sellingPitchInForm">
+            {" "}
+            Quienes ponen anuncios de CALIDAD consiguen gente 3 veces mas rapido
+            y con mas experiencia.
+          </p>
           <div id="yesAndCheckbox">
             <label id="si" htmlFor="urgentCheckBox">
-              Si
+              Si, quiero un anuncio de CALIDAD
             </label>
             <input
               id="urgentCheckBox"
