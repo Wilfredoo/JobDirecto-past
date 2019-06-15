@@ -25,19 +25,19 @@ body {
 .urgentJobData {
   width: 42.5%;
   background-color: #004f94;
-  background-color: #adff2f;
+  /* background-color: #adff2f; */
   border-style: solid;
   border-width: 6px;
   margin: 10px;
   font-size: 40px;
   line-height: 65px;
   padding: 20px;
-  color: black;
+  color: white;
 }
 
 .jobTypeUrgent {
   font-size: 55px;
-  color: black;
+  color: white;
   font-weight: 750;
   word-break: break-word;
 }
