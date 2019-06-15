@@ -430,20 +430,20 @@ Urgent @keyframes blinker {
   #UrgentCheckedTitle {
     font-size: 25px;
   }
-}
-#urgentCheckedContainer {
-  text-align: left;
-}
+  #urgentCheckedContainer {
+    text-align: left;
+  }
 
-.UrgentCheckedText {
-  font-size: 30px;
-  margin-top: -60px;
-}
+  .UrgentCheckedText {
+    font-size: 30px;
+    margin-top: -60px;
+  }
 
-#UrgentCheckedButtonYES,
-#UrgentCheckedButtonNO {
-  width: 530px;
-  height: 100px;
-  font-size: 30px;
-  font-weight: bold;
+  #UrgentCheckedButtonYES,
+  #UrgentCheckedButtonNO {
+    width: 530px;
+    height: 100px;
+    font-size: 30px;
+    font-weight: bold;
+  }
 }
