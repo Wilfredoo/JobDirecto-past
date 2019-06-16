@@ -152,7 +152,8 @@ export class Jobs extends React.Component {
             this.state.jobData.data.map(data => {
               if (
                 this.state.userSelectionArea === data.area &&
-                data.urgent === "true"
+                data.urgent === "true" &&
+                this.urgentJobInterval(data.created_at) === true
               ) {
                 return (
                   <div
