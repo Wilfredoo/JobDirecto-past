@@ -34,7 +34,7 @@ export default class Register extends React.Component {
   render() {
     return (
       <div className="login-container">
-        <h1>Register</h1>
+        <h1 className="heading-1">Register</h1>
         {this.state.error && (
           <div className="error">Este usuario ya esta registrado!</div>
         )}

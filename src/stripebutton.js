@@ -30,7 +30,11 @@ function StripeButton() {
 
   return (
     <div>
-      <button id="UrgentCheckedButtonYES" onClick={handleClick}>
+      <button
+        id="UrgentCheckedButtonYES"
+        className="btn-secondary"
+        onClick={handleClick}
+      >
         Quiero un anuncio de CALIDAD
         <br />
       </button>
