@@ -34,7 +34,11 @@ export default class UrgentChecked extends React.Component {
         </p>
         <StripeButton />
 
-        <button onClick={this.cancelUrgency} id="UrgentCheckedButtonNO">
+        <button
+          onClick={this.cancelUrgency}
+          id="UrgentCheckedButtonNO"
+          className="btn-primary"
+        >
           Quiero un anuncio gratis y común <br />
         </button>
       </div>

@@ -445,6 +445,7 @@ export class JobForm extends React.Component {
           <br />
           <input
             id="listo"
+            className="btn-primary"
             onClick={this.submission}
             type="submit"
             value="Listo"
