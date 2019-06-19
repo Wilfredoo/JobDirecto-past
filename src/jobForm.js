@@ -417,15 +417,9 @@ export class JobForm extends React.Component {
           />
           <br />
           {/**/}
-          <p className="formQuestions">Desea un anuncio de CALIDAD?</p>{" "}
-          <p id="sellingPitchInForm">
-            {" "}
-            Quienes ponen anuncios de CALIDAD consiguen gente 3 veces mas rapido
-            y con mas experiencia.
-          </p>
           <div id="yesAndCheckbox">
             <label id="si" htmlFor="urgentCheckBox">
-              Si, quiero un anuncio de CALIDAD
+              Quiero un anuncio de color azul
             </label>
             <input
               id="urgentCheckBox"

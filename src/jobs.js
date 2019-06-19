@@ -85,9 +85,11 @@ export class Jobs extends React.Component {
     if (!this.state.jobData || !this.state.urgentJobData) {
       return null;
     }
+    console.log(this.context);
     return (
       <div className="bg">
         <h1 id="title">JobDirecto - Trabajos en Nueva York</h1>
+        {this.context.title}
         {this.state.show && (
           <Modal id={this.state.selectedJobId} close={this.hideModal} />
         )}
