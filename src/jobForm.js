@@ -421,6 +421,7 @@ export class JobForm extends React.Component {
             <label id="si" htmlFor="urgentCheckBox">
               Quiero un anuncio de color azul
             </label>
+            <br />
             <input
               id="urgentCheckBox"
               type="checkbox"
