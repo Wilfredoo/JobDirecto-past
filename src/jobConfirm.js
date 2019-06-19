@@ -51,7 +51,9 @@ export class JobConfirm extends React.Component {
     return (
       <div className="jobConfirmPage">
         <form onSubmit={this.handleSubmit}>
-          <h1 className="confirmTitle">Confirme la informacion es correcta:</h1>
+          <h1 className="confirmTitle" className="heading-1">
+            Confirme la informacion es correcta:
+          </h1>
           <table>
             <tr>
               <td className="jobDetailsText">Restaurante:</td>

@@ -154,11 +154,6 @@ td {
   padding: 15px;
 }
 
-.confirmTitle {
-  margin-bottom: 100px;
-  font-size: 45px;
-}
-
 .modal {
   transform: translate(-50%, -50%);
   position: fixed;
@@ -231,9 +226,10 @@ Urgent @keyframes blinker {
   font-size: 40px;
 }
 
-#title {
+.heading-1 {
   font-size: 50px;
   text-align: center;
+  margin-bottom: 60px;
 }
 
 .restName {
@@ -260,30 +256,8 @@ Urgent @keyframes blinker {
   text-align: center;
 }
 
-#UrgentCheckedTitle {
-  font-size: 50px;
-}
-
 .UrgentCheckedText {
   font-size: 40px;
-}
-
-#UrgentCheckedButtonYES {
-  width: 80%;
-  height: 200px;
-  font-size: 49px;
-  font-weight: bold;
-  margin: 20px;
-  background-color: dodgerblue;
-  color: white;
-}
-
-#UrgentCheckedButtonNO {
-  width: 80%;
-  height: 200px;
-  font-size: 40px;
-  margin: 20px;
-  background-color: #fffdd0;
 }
 
 #urgentExample {
@@ -305,10 +279,6 @@ Urgent @keyframes blinker {
   border: 1em solid #000;
   background-color: blue;
   color: blue;
-}
-
-#formTitle {
-  margin-bottom: 60px;
 }
 
 #sellingPitchInForm {
@@ -403,9 +373,6 @@ Urgent @keyframes blinker {
     width: 550px;
   }
 
-  #UrgentCheckedTitle {
-    font-size: 25px;
-  }
   #urgentCheckedContainer {
     text-align: left;
   }

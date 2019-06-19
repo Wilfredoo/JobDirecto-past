@@ -22,7 +22,9 @@ export default class UrgentChecked extends React.Component {
   render() {
     return (
       <div id="urgentCheckedContainer">
-        <h1 id="UrgentCheckedTitle">Usted a marcado anuncio CALIDAD</h1>
+        <h1 id="UrgentCheckedTitle" className="heading-1" z>
+          Usted a marcado anuncio CALIDAD
+        </h1>
         <img id="urgentExample" src="urgentExample.png" />
         <p className="UrgentCheckedText">
           Los anuncios CALIDAD los ven muchas mas personas. <br />
