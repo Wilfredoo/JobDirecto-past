@@ -63,7 +63,7 @@ export class JobForm extends React.Component {
     return (
       <div className={jobFormClass.join(" ")}>
         <form onSubmit={this.handleSubmit}>
-          <h1 id="formTitle">Crear Anuncio de Trabajo en segundos</h1>
+          <h1 id="formTitle" className="heading-1">Crear Anuncio de Trabajo en segundos</h1>
           <p className="formQuestions">Como se llama su negocio?</p>
           <input
             className="formInputs"
@@ -440,6 +440,7 @@ export class JobForm extends React.Component {
           <br />
           <input
             id="listo"
+            className="btn-primary"
             onClick={this.submission}
             type="submit"
             value="Listo"

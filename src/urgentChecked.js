@@ -22,7 +22,13 @@ export default class UrgentChecked extends React.Component {
   render() {
     return (
       <div id="urgentCheckedContainer">
+<<<<<<< HEAD
         <h1 id="UrgentCheckedTitle">Usted a marcado anuncio azul</h1>
+=======
+        <h1 id="UrgentCheckedTitle" className="heading-1">
+          Usted a marcado anuncio CALIDAD
+        </h1>
+>>>>>>> 0c842b5a1539ff43158bcf03a0794a1d78024ef8
         <img id="urgentExample" src="urgentExample.png" />
         <p className="UrgentCheckedText">
           Los anuncios azules los ven muchas mas personas. <br />
@@ -34,7 +40,11 @@ export default class UrgentChecked extends React.Component {
         </p>
         <StripeButton />
 
-        <button onClick={this.cancelUrgency} id="UrgentCheckedButtonNO">
+        <button
+          onClick={this.cancelUrgency}
+          id="UrgentCheckedButtonNO"
+          className="btn-primary"
+        >
           Quiero un anuncio gratis y común <br />
         </button>
       </div>

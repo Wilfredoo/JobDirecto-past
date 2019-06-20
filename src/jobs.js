@@ -88,14 +88,21 @@ export class Jobs extends React.Component {
     console.log(this.context);
     return (
       <div className="bg">
-        <h1 id="title">JobDirecto - Trabajos en Nueva York</h1>
+        <h1 id="title" classname="heading-1">
+          JobDirecto - Trabajos en Nueva York
+        </h1>
         {this.context.title}
         {this.state.show && (
           <Modal id={this.state.selectedJobId} close={this.hideModal} />
         )}
         <div className="buttonsAndFilters">
           <Link to="/jobForm">
-            <input id="createJob" type="submit" value="Crear anuncio" />
+            <input
+              id="createJob"
+              type="submit"
+              value="Crear anuncio"
+              className="btn-primary"
+            />
           </Link>
 
           <div className="filtersbutton">
