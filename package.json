@@ -13,7 +13,7 @@
   "dependencies": {
     "@types/react-stripe-elements": "^1.1.10",
     "@types/stripe": "^6.26.3",
-    "axios": "^0.15.3",
+    "axios": "^0.18.1",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.20.0",
     "babel-loader": "^6.2.9",
